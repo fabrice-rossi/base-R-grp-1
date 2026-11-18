@@ -544,3 +544,44 @@ bar[["z"]]
 bar["z"]
 ```
 
+### Modifying lists
+
+```{r}
+y
+cat("--\n\n")
+y[[1]] <- seq(0,1,length.out=11) ## vector
+y
+```
+
+```{r}
+y$y <- sample(1:10, 3)
+y
+```
+
+```{r}
+y
+y["z"] <- sample(letters, 5)
+y
+```
+
+```{r}
+y <- list(x = c(1, 2, 4), y = c(TRUE, FALSE), z = c("to", "ti"))
+y[2:3] <- list("n"=1:3, "l"=letters[1:4])
+y
+```
+
+```{r}
+y
+names(y)
+names(y) <- LETTERS[1:3]
+y
+```
+```{r}
+y
+y$D <- -2:4
+y
+y[[6]] <- sample(1:10)
+y
+names(y)
+```
+
