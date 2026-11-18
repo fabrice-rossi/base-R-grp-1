@@ -483,3 +483,64 @@ y[[3]]
 typeof(z[[1]])
 ```
 
+```{r}
+set.seed(0)
+foo <- list("the values" = 1:10,
+            "something else"= sample(c(TRUE, FALSE), 8, replace=TRUE, prob=c(4,1)))
+foo
+```
+
+```{r}
+foo$`the values`
+```
+
+```{r}
+foo[["the values"]]
+y[["z"]]
+```
+
+### Sublists
+
+```{r}
+z
+cat("--\n\n")
+z[1]
+typeof(z[1])
+```
+
+Indexing lists with a single pair of brackets operates exactly as it does on vectors. 
+If `x` is list:
+
+- `x[...]` is a list 
+- `x[y]` with y integer extracts into a list the elements whose indexes are in `y`
+- `x[z]` with z logical extracts into a list the elements of `x` whose corresponding
+   value if `TRUE` in `z`
+   
+```{r}
+y
+cat("--\n\n")
+y[1:2]
+cat("--\n\n")
+y[c(TRUE, FALSE, FALSE, TRUE)]
+cat("--\n\n")
+z[c(FALSE, TRUE, TRUE)]
+```
+
+```{r}
+y
+cat("--\n\n")
+bar <- y[c("z", "z", "x")]
+bar
+```
+
+```{r}
+bar[["z"]]
+bar["z"]
+cat("--\n\n")
+bar[[1]] <- 1:10
+bar
+cat("--\n\n")
+bar[["z"]]
+bar["z"]
+```
+
