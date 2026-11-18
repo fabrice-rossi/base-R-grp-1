@@ -348,6 +348,46 @@ x
 x[c(-2, 4)]
 ```
 
+### Logical vectors
+```{r}
+x <- c(2, 3, -3, 4, -2)
+x > 0
+```
+```{r}
+x <- 1:6
+y <- -1:1
+x <= y + 3 ## two steps of broadcasting 3 -> c(3, 3, 3) + y -> to length 6
+```
+
+```{r}
+x <- seq(-pi, pi, length.out = 10)
+(sin(x) > 0) & (cos(x) > 0)
+```
+
+### Logical indexes
+
+X[Y] is made of the elements X[i] for which Y[i] is `TRUE`.
+
+```{r}
+x <- seq(-pi, pi, length.out = 21)
+x[(sin(x) > 0) & (cos(x) > 0)]
+```
+
+```{r}
+x <- 1:6
+y <- c(TRUE, FALSE)
+x[y] ## broadcasting
+y[x] ## indexes outside of the range of the y vector
+```
+
+
+```{r}
+x <- 1:3
+y <- c(TRUE, TRUE, FALSE, TRUE)
+x[y]
+z <- c(FALSE, TRUE, TRUE, FALSE)
+x[z]
+```
 
 ## More on lists
 ```{r}
