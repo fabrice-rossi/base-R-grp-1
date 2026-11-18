@@ -2,6 +2,7 @@
 title: "Introduction to low level R"
 author: "Fabrice Rossi"
 format: html
+df-print: kable
 ---
 
 ```{r}
