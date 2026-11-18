@@ -8,6 +8,11 @@ format: html
 here::i_am("r101-grp1.Rproj")
 ```
 
+```{r}
+library(ggplot2)
+library(dplyr)
+```
+
 ```{bash}
 #| eval: false
 git remote add origin https://github.com/fabrice-rossi/base-R-grp-1.git
@@ -213,10 +218,6 @@ A class is a collection of functions and other elements that give to a R object
 some specific behaviour. Most of the classes are based on lists. 
 
 ### Looking inside an object
-
-```{r}
-library(ggplot2)
-```
 
 ```{r}
 iris_petal_plot <- ggplot(iris, aes(x = `Petal.Length`, y = Petal.Width, colour = Species)) +
